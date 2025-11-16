@@ -1,5 +1,5 @@
 import { getProfiles } from "../utils/firestore.ts";
-import type { User } from "../types/User";
+import type { User } from "../types/User.ts";
 
 let profileDeck: User[] = [];
 let currentIndex = 0;
@@ -11,7 +11,7 @@ export const resetProfileDeck = async (currentUserId: string) => {
 };
 
 export const getNextProfile = (): User | null => {
-  if (currentIndex >= profileDeck.length) return null; // no more profiles
+  if (currentIndex >= profileDeck.length) return null; 
   const nextProfile = profileDeck[currentIndex];
   currentIndex += 1;
   return nextProfile;
