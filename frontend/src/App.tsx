@@ -4,10 +4,11 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import CreateProfile from "./pages/CreateProfile";
 import Swipe from "./pages/Swipe";
 import Matches from "./pages/Matches";
+import "./App.css"
 
 const App: React.FC = () => {
   return (
-    <div style={{ padding: "2rem" }}>
+    <div style={{ padding: "2rem", backgroundColor: "#ffb38a" }}>
       <nav style={{ marginBottom: "1rem" }}>
         <Link to="/" style={{ marginRight: "1rem" }}>Create Profile</Link>
         <Link to="/swipe" style={{ marginRight: "1rem" }}>Swipe</Link>

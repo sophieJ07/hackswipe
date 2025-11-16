@@ -13,8 +13,9 @@
 
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { handleCreateProfile} from "../handlers/createProfileHandlers";
+import { handleCreateProfile } from "../handlers/createProfileHandlers";
 import type { ProfileInput } from "../handlers/createProfileHandlers";
+import nugget from "../assets/nugget.png";
 
 const CreateProfile: React.FC = () => {
   const navigate = useNavigate();
@@ -54,58 +55,88 @@ const CreateProfile: React.FC = () => {
   };
 
   return (
-    <div style={{ padding: "2rem" }}>
-      <h1>Create Profile</h1>
-      <p>This is a placeholder form UI — replace inputs later.</p>
+    <div className="profile-page">
+      <h1 style={{ marginBottom: "1rem" }}>Create your Hackathon Profile!</h1>
 
-      <form onSubmit={handleSubmit}>
-        <input
-          placeholder="Name"
-          value={formData.name}
-          onChange={e => handleChange("name", e.target.value)}
-        />
-        <input
-          placeholder="Bio"
-          value={formData.bio}
-          onChange={e => handleChange("bio", e.target.value)}
-        />
-        <input
-          placeholder="Role"
-          value={formData.role}
-          onChange={e => handleChange("role", e.target.value)}
-        />
-        <input
-          placeholder="Skills"
-          value={formData.skills}
-          onChange={e => handleChange("skills", e.target.value)}
-        />
-        <input
-          placeholder="Hackathon Goal"
-          value={formData.goal}
-          onChange={e => handleChange("goal", e.target.value)}
-        />
-        <input
-          placeholder="Project Idea"
-          value={formData.projectIdea}
-          onChange={e => handleChange("projectIdea", e.target.value)}
-        />
-        <input
-          placeholder="LinkedIn / Other Links"
-          value={formData.links[0]}
-          onChange={e => setFormData(prev => ({ ...prev, links: [e.target.value] }))}
-        />
-        <input
-          placeholder="Preferred Contact Info"
-          value={formData.contact}
-          onChange={e => handleChange("contact", e.target.value)}
-        />
-        <input 
-          placeholder="Image URL"
-          value={formData.imageUrl}
-          onChange={e => handleChange("imageUrl", e.target.value)}
-        />
-        <button type="submit">Create Profile</button>
-      </form>
+      <div className="profile-container">
+
+        <div className="left-column">
+          <img
+            className="profile-pic"
+            src={formData.imageUrl || nugget}
+            alt="profile"
+          />
+          <input
+            className="input"
+            name="name"
+            placeholder="Name"
+            value={formData.name}
+            onChange={e => handleChange("name", e.target.value)}
+          />
+          <input
+            className="input"
+            name="contact"
+            placeholder="Contact (Discord/Email)"
+            value={formData.contact}
+            onChange={e => handleChange("contact", e.target.value)}
+          />
+        </div>
+
+        <div className="right-column">
+          {/* Section 1: Roles & Skills */}
+          <div className="section roles-skills">
+            <input
+              className="input"
+              name="role"
+              placeholder="Role"
+              value={formData.role}
+              onChange={e => handleChange("role", e.target.value)}
+            />
+            <div className="input-group">
+              <div className="row">
+                <input
+                  className="input flex"
+                  name="skills"
+                  placeholder="Skills"
+                  value={formData.skills}
+                  onChange={e => handleChange("skills", e.target.value)}
+                />
+                <button className="plus-btn">+</button>
+              </div>
+            </div>
+          </div>
+
+          {/* Section 2: Bio & Goals */}
+          <div className="section bio-goals">
+            <textarea
+              className="textarea full-width"
+              name="bio"
+              placeholder="Bio"
+              value={formData.bio}
+              onChange={e => handleChange("bio", e.target.value)}
+            />
+            <textarea
+              className="textarea full-width"
+              name="goal"
+              placeholder="Hackathon Goal"
+              value={formData.goal}
+              onChange={e => handleChange("goal", e.target.value)}
+            />
+          </div>
+
+          {/* Section 3: Image & Save */}
+          <div className="section image-save">
+            <input
+              className="input full-width"
+              name="imageUrl"
+              placeholder="Image URL"
+              value={formData.imageUrl}
+              onChange={e => handleChange("imageUrl", e.target.value)}
+            />
+            <button className="save-btn">Save Profile</button>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
