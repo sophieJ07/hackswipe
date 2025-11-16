@@ -104,5 +104,4 @@ const Swipe: React.FC = () => {
     </div>
   );
 };
-
 export default Swipe;
