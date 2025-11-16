@@ -1,0 +1,71 @@
+/* Page wrapper */
+.matches-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+               'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+/* Page title */
+.matches-title {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+/* Card box behind profile */
+.matches-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 2rem;
+  width: 360px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Profile image */
+.matches-image {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: #ddd;
+  margin-bottom: 1rem;
+}
+
+/* Content container */
+.matches-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  text-align: center;
+}
+
+/* Individual text styles */
+.matches-name,
+.matches-bio,
+.matches-role,
+.matches-skills,
+.matches-project,
+.matches-links,
+.matches-contact {
+  font-size: 1rem;
+  margin: 0;
+  color: #555;
+}
+
+/* Back button */
+.matches-back-btn {
+  margin-top: 1rem;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  background-color: #ff8a5c;
+  color: white;
+}
