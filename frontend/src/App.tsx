@@ -1,5 +1,5 @@
 import React from "react";
-import { Routes, Route} from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
 import CreateProfile from "./pages/CreateProfile";
 import Swipe from "./pages/Swipe";
@@ -7,16 +7,24 @@ import Matches from "./pages/Matches";
 
 const App: React.FC = () => {
   return (
+    <div style={{ padding: "2rem" }}>
+      <nav style={{ marginBottom: "1rem" }}>
+        <Link to="/" style={{ marginRight: "1rem" }}>Create Profile</Link>
+        <Link to="/swipe" style={{ marginRight: "1rem" }}>Swipe</Link>
+        <Link to="/matches">Matches</Link>
+      </nav>
+
       <Routes>
         <Route path="/" element={<CreateProfile />} />
         <Route path="/swipe" element={<Swipe />} />
         <Route path="/matches" element={<Matches />} />
+        <Route path="*" element={<div>Page not found</div>} />
       </Routes>
+    </div>
   );
 };
 
 export default App;
-
 
 
 // import { useState } from 'react'
