@@ -1,5 +1,5 @@
 import { db } from "../firebase/firebaseConfig.ts";
-import { collection, addDoc, getDocs } from "firebase/firestore";
+import { doc, collection, addDoc, getDocs, getDoc} from "firebase/firestore";
 import type { User } from "../types/User";
 
 export const addUser = async (user: User): Promise<string> => {
@@ -22,6 +22,12 @@ export const addLike = async (fromId: string, toId: string) => {
   });
 };
 
+export const getUserById = async (userId: string): Promise<User | null> => {
+  const docRef = doc(db, "users", userId);
+  const snapshot = await getDoc(docRef);
+  if (!snapshot.exists()) return null;
+  return { id: snapshot.id, ...snapshot.data() } as User;
+};
 
 import { query, where } from "firebase/firestore";
 
