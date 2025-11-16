@@ -1,4 +1,4 @@
-interface User {
+export interface User {
   id?: string;           // Firestore document ID
   name: string;          // Name
   bio: string;           // Short bio
