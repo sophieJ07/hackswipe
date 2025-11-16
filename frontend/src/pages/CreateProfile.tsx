@@ -71,7 +71,7 @@ const CreateProfile: React.FC = () => {
         />
         <input
           placeholder="Role"
-          value={formData.bio}
+          value={formData.role}
           onChange={e => handleChange("role", e.target.value)}
         />
         <input
