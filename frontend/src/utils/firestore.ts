@@ -1,5 +1,5 @@
 import { db } from "../firebase/firebaseConfig.ts";
-import { doc, collection, addDoc, getDocs, getDoc} from "firebase/firestore";
+import { doc, collection, addDoc, getDocs, getDoc } from "firebase/firestore";
 import type { User } from "../types/User";
 
 export const addUser = async (user: User): Promise<string> => {

@@ -13,7 +13,7 @@
 
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import {resetProfileDeck,getNextProfile} from "../handlers/browseHandlers";
+import { resetProfileDeck, getNextProfile } from "../handlers/browseHandlers";
 import { handleRightSwipe } from "../handlers/RightSwipeHandler";
 import type { User } from "../types/User";
 import nugget from "../assets/nugget.png";
