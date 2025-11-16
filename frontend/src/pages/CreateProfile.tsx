@@ -66,6 +66,10 @@ const CreateProfile: React.FC = () => {
             src={formData.imageUrl || nugget}
             alt="profile"
           />
+
+        </div>
+
+        <div className="right-column">
           <input
             className="input"
             name="name"
@@ -80,10 +84,6 @@ const CreateProfile: React.FC = () => {
             value={formData.contact}
             onChange={e => handleChange("contact", e.target.value)}
           />
-        </div>
-
-        <div className="right-column">
-          {/* Section 1: Roles & Skills */}
           <div className="section roles-skills">
             <input
               className="input"
@@ -101,7 +101,6 @@ const CreateProfile: React.FC = () => {
                   value={formData.skills}
                   onChange={e => handleChange("skills", e.target.value)}
                 />
-                <button className="plus-btn">+</button>
               </div>
             </div>
           </div>

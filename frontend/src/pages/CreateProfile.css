@@ -8,13 +8,7 @@
     flex-direction: row;
     gap: 2rem;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-/* responsive: stack on smaller screens */
-@media (max-width: 768px) {
-    .profile-container {
-        flex-direction: column;
-    }
+    align-items: flex-start;
 }
 
 /* column structure */
@@ -46,12 +40,13 @@
 
 .profile-pic {
     width: 120px;
-    /* smaller size */
     height: 120px;
+    max-width: 120px;
+    max-height: 120px;
     border-radius: 50%;
-    /* circular */
     object-fit: cover;
     background: #ddd;
+    flex-shrink: 0;
 }
 
 /* input styles */

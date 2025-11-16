@@ -13,7 +13,7 @@
 
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import {resetProfileDeck,getNextProfile} from "../handlers/browseHandlers";
+import { resetProfileDeck, getNextProfile } from "../handlers/browseHandlers";
 import { handleRightSwipe } from "../handlers/RightSwipeHandler";
 import type { User } from "../types/User";
 
@@ -69,9 +69,9 @@ const Swipe: React.FC = () => {
   return (
     <div style={{ padding: "2rem" }}>
       <h1>Swipe Page</h1>
-      <img src={currentProfile.imageUrl || "/assets/nugget.png"} 
-          alt="Profile" 
-          style={{ width: "200px", height: "200px", objectFit: "cover", borderRadius: "10px" }} />
+      <img src={currentProfile.imageUrl || "/assets/nugget.png"}
+        alt="Profile"
+        style={{ width: "200px", height: "200px", objectFit: "cover", borderRadius: "10px" }} />
       <h4>{currentProfile.name}</h4>
       <p>Bio: {currentProfile.bio}</p>
       <p>Role: {currentProfile.role}</p>
