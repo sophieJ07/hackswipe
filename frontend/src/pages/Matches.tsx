@@ -16,6 +16,8 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import type { User } from "../types/User";
+import "./Swipe.css";
+import nugget from "../assets/nugget.png";
 
 const Matches: React.FC = () => {
   const navigate = useNavigate();
@@ -38,19 +40,29 @@ const Matches: React.FC = () => {
   }
 
   return (
-    <div style={{ padding: "2rem" }}>
-      <h1>It's a Match! 🎉</h1>
-      <p><strong>Name:</strong> {matchedUser.name}</p>
-      <p><strong>Bio:</strong> {matchedUser.bio}</p>
-      <p><strong>Role:</strong> {matchedUser.role}</p>
-      <p><strong>Skillset:</strong> {matchedUser.skills}</p>
-      <p><strong>Project Idea:</strong> {matchedUser.projectIdea}</p>
-      <p><strong>Links:</strong> {matchedUser.links.join(", ")}</p>
-      <p><strong>Contact Info:</strong> {matchedUser.contact}</p>
+    <div className="swipe-page">
+      <h1 className="swipe-page-title">It's a match!</h1>
 
-      <button onClick={() => navigate("/swipe")} style={{ marginTop: "1rem" }}>
-        Back to Swiping
-      </button>
+      <div className="swipe-card">
+        <img
+          className="swipe-card-image"
+          src={matchedUser.imageUrl || nugget}
+          alt={matchedUser.name}
+        />
+
+        <div className="swipe-card-content">
+          <h2 className="swipe-card-name">{matchedUser.name}</h2>
+          <p className="swipe-card-bio">Bio: {matchedUser.bio}</p>
+          <p className="swipe-card-role">Role: {matchedUser.role}</p>
+          <p className="swipe-card-skills">Skills: {matchedUser.skills}</p>
+          <p className="swipe-card-goal">Hackathon Goal: {matchedUser.goal}</p>
+          <p className="swipe-card-project">Project Idea: {matchedUser.projectIdea}</p>
+          <p className="swipe-card-links">
+            Links: {matchedUser.links?.join(", ")}
+          </p>
+          <p className="swipe-card-contact">Contact: {matchedUser.contact}</p>
+        </div>
+        </div>
     </div>
   );
 };
