@@ -1,0 +1,90 @@
+/* Page wrapper */
+.swipe-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+        'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+/* Page title */
+.swipe-page-title {
+    margin-bottom: 2rem;
+}
+
+/* Card box behind profile */
+.swipe-card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 2rem;
+    width: 350px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* Profile image */
+.swipe-card-image {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    background: #ddd;
+}
+
+/* Text content */
+.swipe-card-content {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+/* Individual text styling */
+.swipe-card-name {
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+.swipe-card-bio,
+.swipe-card-role,
+.swipe-card-skills,
+.swipe-card-goal,
+.swipe-card-project,
+.swipe-card-links,
+.swipe-card-contact {
+    font-size: 0.95rem;
+    margin: 0;
+    color: #555;
+}
+
+/* Buttons container */
+.swipe-card-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+/* Buttons styling */
+.swipe-btn {
+    padding: 0.6rem 1.2rem;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.left-btn {
+    background-color: #eee;
+    color: #333;
+}
+
+.right-btn {
+    background-color: #ff8a5c;
+    color: white;
+}

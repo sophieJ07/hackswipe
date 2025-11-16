@@ -13,9 +13,11 @@
 
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import {resetProfileDeck,getNextProfile} from "../handlers/browseHandlers";
+import { resetProfileDeck, getNextProfile } from "../handlers/browseHandlers";
 import { handleRightSwipe } from "../handlers/RightSwipeHandler";
 import type { User } from "../types/User";
+import nugget from "../assets/nugget.png";
+import "./Swipe.css";
 
 const Swipe: React.FC = () => {
   const navigate = useNavigate();
@@ -67,27 +69,37 @@ const Swipe: React.FC = () => {
   }
 
   return (
-    <div style={{ padding: "2rem" }}>
-      <h1>Swipe Page</h1>
-      <img src={currentProfile.imageUrl || "/assets/nugget.png"} 
-          alt="Profile" 
-          style={{ width: "200px", height: "200px", objectFit: "cover", borderRadius: "10px" }} />
-      <h4>{currentProfile.name}</h4>
-      <p>Bio: {currentProfile.bio}</p>
-      <p>Role: {currentProfile.role}</p>
-      <p>Skills: {currentProfile.skills}</p>
-      <p>Hackathon Goal: {currentProfile.goal}</p>
-      <p>Project Idea: {currentProfile.projectIdea}</p>
-      <p>Links: {currentProfile.links?.join(", ")}</p>
-      <p>Contact: {currentProfile.contact}</p>
+    <div className="swipe-page">
+      <h1 className="swipe-page-title">Swipe Page</h1>
 
-      <div style={{ marginTop: "1rem" }}>
-        <button onClick={handleLeftSwipe} style={{ marginRight: "1rem" }}>
-          Pass ❌
-        </button>
-        <button onClick={handleRightSwipeClick}>
-          Let's Team Up! ✅
-        </button>
+      <div className="swipe-card">
+        <img
+          className="swipe-card-image"
+          src={currentProfile.imageUrl || nugget}
+          alt={currentProfile.name}
+        />
+
+        <div className="swipe-card-content">
+          <h2 className="swipe-card-name">{currentProfile.name}</h2>
+          <p className="swipe-card-bio">Bio: {currentProfile.bio}</p>
+          <p className="swipe-card-role">Role: {currentProfile.role}</p>
+          <p className="swipe-card-skills">Skills: {currentProfile.skills}</p>
+          <p className="swipe-card-goal">Hackathon Goal: {currentProfile.goal}</p>
+          <p className="swipe-card-project">Project Idea: {currentProfile.projectIdea}</p>
+          <p className="swipe-card-links">
+            Links: {currentProfile.links?.join(", ")}
+          </p>
+          <p className="swipe-card-contact">Contact: {currentProfile.contact}</p>
+        </div>
+
+        <div className="swipe-card-buttons">
+          <button className="swipe-btn left-btn" onClick={handleLeftSwipe}>
+            Pass ❌
+          </button>
+          <button className="swipe-btn right-btn" onClick={handleRightSwipeClick}>
+            Let's Team Up! ✅
+          </button>
+        </div>
       </div>
     </div>
   );
